@@ -1,3 +1,6 @@
+body{
+    background-color: gray;
+}  
 .bs-icon {
   --bs-icon-size: 0.75rem;
   display: flex;
@@ -116,6 +119,5 @@
   margin-left: 0 !important;
 }
 #main{
-  background-color: gray;
   background: url("./img-1.jpg") 0 0 / cover no-repeat;
 }
