@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js-Task-5</title>
+        <style>
+            label{
+                display: inline-block;
+                width: 70px;
+            }
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Js-Task-5</h1>
+        <form action="" onsubmit="return valid()">
+            <label for="">Name: </label>
+            <input type="text" id="name">
+            <span id="namerr"></span><br><br>
+            <label for="">Email: </label>
+            <input type="email" id="em">
+            <span id="emailerr"></span><br><br>
+            <label for="">Website: </label>
+            <input type="text" id="web">
+            <span id="weberr"></span><br><br>
+            <label for="" style="text-align: start;">Message: </label>
+            <textarea name="" id="txt" cols="30" rows="10"></textarea>
+            <span id="msgerr"></span><br><br>
+            <input type="submit" >
+            
+        </form>
+
+        <script>
+            function valid(){
+                const name = document.getElementById("name").value;
+                var email = document.getElementById("em").value;
+                var web = document.getElementById("web").value;
+                var msg = document.getElementById("txt").value;
+                let vali = true;
+                if(name ===""){
+                    document.getElementById("namerr").innerHTML = "This field is required";
+                    document.getElementById("name").style.borderColor = "red";
+                    vali = false;
+                }
+                else{
+                    document.getElementById("namerr").innerHTML = "";
+                    document.getElementById("name").style.borderColor = "";   
+                }
+                
+                if(email ===""){
+                    document.getElementById("emailerr").innerHTML = "A valid email address is required";
+                    document.getElementById("em").style.borderColor = "red";
+                    vali = false;
+                }
+                else{
+                    document.getElementById("emailerr").innerHTML = "";
+                    document.getElementById("em").style.borderColor = "";   
+                }
+
+                if(web ===""){
+                    document.getElementById("weberr").innerHTML = "A valid url is required";
+                    document.getElementById("web").style.borderColor = "red";
+                    vali = false;
+                }
+                else{
+                    document.getElementById("weberr").innerHTML = "";
+                    document.getElementById("web").style.borderColor = "";   
+                }
+
+                if(msg ===""){
+                    document.getElementById("msgerr").innerHTML = "This field is required";
+                    document.getElementById("txt").style.borderColor = "red";
+                    vali = false;
+                }
+                else{
+                    document.getElementById("msgerr").innerHTML = "";
+                    document.getElementById("txt").style.borderColor = "";   
+                }
+                
+                return vali;
+
+            }
+        </script>
+    </body>
+</html>

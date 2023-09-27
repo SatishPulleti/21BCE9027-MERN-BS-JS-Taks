@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js-Task-4</title>
+    </head>
+    <body>
+        <h1>Js-Task-4</h1>
+        <button type="button" onclick="dat()">show date</button>
+        <p id="fir"></p>
+        <button type="button" onclick="tim()">show Time</button>
+        <p id="sec"></p>
+
+        <script>
+            function dat(){
+                var dt = new Date();
+                var date = dt.getDate();
+                var mon = dt.getMonth();
+                var y = dt.getFullYear();
+                if(mon==0)
+                    x = "January";
+                else if(mon==1)
+                    x = "February";
+                else if(mon==2)
+                    x = "March";
+                else if(mon==3)
+                    x = "April";
+                else if(mon==4)
+                    x = "May";
+                else if(mon==5)
+                    x = "June";
+                else if(mon==6)
+                    x = "July";
+                else if(mon==7)
+                    x = "August";
+                else if(mon==8)
+                    x = "September";
+                else if(mon==9)
+                    x = "October";
+                else if(mon==10)
+                    x = "November";
+                else if(mon==11)
+                    x = "December";
+                
+                document.getElementById("fir").innerHTML = date+"/"+x+"/"+y;
+            }
+
+            function tim(){
+                var dt = new Date();
+                var day = dt.getDay();
+                var mon = dt.getMonth();
+                var date = dt.getDate();
+                var y = dt.getFullYear();
+                var h = dt.getHours();
+                var m = dt.getMinutes();
+                var s = dt.getSeconds();
+                var tz = dt.getTimezoneOffset();
+                
+                if(mon==0)
+                    x = "Jan";
+                else if(mon==1)
+                    x = "Feb";
+                else if(mon==2)
+                    x = "Mar";
+                else if(mon==3)
+                    x = "Apr";
+                else if(mon==4)
+                    x = "May";
+                else if(mon==5)
+                    x = "June";
+                else if(mon==6)
+                    x = "July";
+                else if(mon==7)
+                    x = "Aug";
+                else if(mon==8)
+                    x = "Sep";
+                else if(mon==9)
+                    x = "Oct";
+                else if(mon==10)
+                    x = "Nov";
+                else if(mon==11)
+                    x = "Dec";
+                
+                if(day == 0)
+                    dy = "Sun"
+                else if(day == 1)
+                    dy = "Mon"
+                else if(day == 2)
+                    dy = "Tue"
+                else if(day == 3)
+                    dy = "Wed"
+                else if(day == 4)
+                    dy = "Thu"
+                else if(day == 5)
+                    dy = "Fri"
+                else if(day == 6)
+                    dy = "Sat"
+                
+                    
+
+                document.getElementById("sec").innerHTML = dy+" "+x+" "+date+" "+y+" "+h+":"+m+":"+s+" GMT "+tz+" (Indian Standard Time)";
+                // document.getElementById("sec").innerHTML = dt.getTimezoneOffset();
+
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js-Task-8</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <style>
+            body{
+                background: linear-gradient(rgba(254,246,204,255),rgba(244,155,208,255));
+            }
+            form{
+                width: 550px;
+                margin: 0 auto;
+            }
+            label{
+                display: inline-block;
+                width: 150px;
+                font-weight: bold;
+            }
+            h1{
+                text-align: center;
+                color: blue;
+            }
+            span{
+                color: red;
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="mt-3">Registration form</h1>
+        <form action="" class="mt-4" onsubmit="return valid()">
+            <div class="input-group mb-2">
+                <label for="fname" class="form-label">First Name:</label>
+                <input type="text" name="fname" id="fname" class="form-control"> &nbsp;
+                <span id="fnameerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="lname" class="form-label">Last Name:</label>
+                <input type="text" name="lname" id="lname" class="form-control"> &nbsp;
+                <span id="lnameerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" id="email" class="form-control"> &nbsp;
+                <span id="emailerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="pass" class="form-label">Password:</label>
+                <input type="password" name="pass" id="pass" class="form-control"> &nbsp;
+                <span id="passerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="repass" class="form-label">Re-enter Password:</label>
+                <input type="password" name="repass" id="repass" class="form-control"> &nbsp;
+                <span id="repasserr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="gen" class="form-label">Gender:</label>
+                <div>
+                    <div><input type="radio" name="gen" checked>Male</div>
+                    <div><input type="radio" name="gen">Female</div>
+
+                </div>
+            </div>
+            <div class="input-group mb-2">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" name="age" id="age" class="form-control"> &nbsp;
+                <span id="ageerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="ph" class="form-label">Phone Number:</label>
+                <input type="number" name="ph" id="ph" class="form-control"> &nbsp;
+                <span id="pherr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="add" class="form-label">Address:</label>
+                <textarea name="add" id="add" cols="30" rows="10" class="form-control"> &nbsp;</textarea>
+                <span id="adderr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="state" class="form-label">State:</label>
+                <input type="text" name="state" id="state" class="form-control"> &nbsp;
+                <span id="stateerr"></span>
+            </div>
+            <div class="input-group mb-2">
+                <label for="country" class="form-label">Country:</label>
+                <select class="form-select">
+                    <option selected>Choose your country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Australia</option>
+                    <option>England</option>
+
+                </select>
+            </div>
+            <div class="input-group mb-2">
+                <label for="lan" class="">Languages known:</label>
+                <input type="checkbox" name="lan" id="lan1"> English &nbsp;
+                <input type="checkbox" name="lan" id="lan2" >Kannada &nbsp;
+                <input type="checkbox" name="lan" id="lan3" >Hindi &nbsp;
+                <input type="checkbox" name="lan" id="lan4" >Telugu &nbsp;
+            </div>
+            <div class="mb-2">
+                <input type="checkbox" name="dec" id="dec" checked>&nbsp;
+                Hereby I declare all the given details are true
+            </div>
+            <div style="text-align: right;" class="mb-2">
+                Log in to <a href="https://ethnus.com/">Ethnus</a> Website
+            </div>
+            <div class="mb-2" style="text-align: center;">
+                <input type="submit" value="Register" class="btn btn-danger">
+            </div>
+        </form>
+
+        <script>
+            function valid() {
+                var firstName = document.getElementById("fname").value;
+                var lastName = document.getElementById("lname").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("pass").value;
+                var rePassword = document.getElementById("repass").value;
+                var age = document.getElementById("age").value;
+                var phoneNumber = document.getElementById("ph").value;
+                var address = document.getElementById("add").value;
+                var state = document.getElementById("state").value;
+                let val = true;
+                if (firstName.trim() === "") {
+                    document.getElementById("fnameerr").innerHTML = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("fnameerr").innerHTML = "";
+                }
+
+                if (lastName.trim() === "") {
+                    document.getElementById("lnameerr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("lnameerr").innerHTML = "";
+                }
+
+                if (email.trim() === "") {
+                    document.getElementById("emailerr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("emailerr").innerHTML = "";
+                }
+                
+                if (password.trim() === "") {
+                    document.getElementById("passerr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("passerr").innerHTML = "";
+                }
+                
+                if (rePassword.trim() === "") {
+                    document.getElementById("repasserr").textContent = "POOR OR MISMATCH";
+                    val = false;
+                }
+                else if(rePassword!==password){
+                    document.getElementById("repasserr").textContent = "MISMATCH";
+                    val = false;
+                }
+                else{
+                    document.getElementById("repasserr").innerHTML = "";
+                }
+                
+                if (age.trim() === "") {
+                    document.getElementById("ageerr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("ageerr").innerHTML = "";
+                }
+                
+                if (phoneNumber.trim() === "") {
+                    document.getElementById("pherr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("pherr").innerHTML = "";
+                }
+                
+                if (address.trim() === "") {
+                    document.getElementById("adderr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("adderr").innerHTML = "";
+                }
+                
+                if (state.trim() === "") {
+                    document.getElementById("stateerr").textContent = "POOR";
+                    val = false;
+                }
+                else{
+                    document.getElementById("stateerr").innerHTML = "";
+                }
+                
+                return val;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js-Task-3</title>
+        <style>
+            .top{
+                background-color: aqua;
+                width: 300px;
+                padding: 10px;
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Js-Task-3</h1>
+        <div class="top">
+            1st Number:&nbsp; <input type="text" id="first">
+            <br><br>
+            2nd Number: <input type="text" id="sec">
+            <br><br>
+            <button type="button" onclick="mul()">Multiply</button>
+            <button type="button" onclick="divide()">Divide</button>
+            <p>The Result is:</p>
+            <p id="res" class="ans"></p>
+        </div>
+
+
+        <script>
+            function mul(){
+                var a = Number(document.getElementById("first").value);
+                var b = Number(document.getElementById("sec").value);
+
+                var c = a*b;
+                document.getElementById("res").innerHTML = c;
+            }
+            function divide(){
+                var a = Number(document.getElementById("first").value);
+                var b = Number(document.getElementById("sec").value);
+
+                var c = a/b;
+                document.getElementById("res").innerHTML = c;
+            }
+        </script>
+    </body>
+</html>

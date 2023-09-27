@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js-Task-2</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <style>
+            .input-group{
+                width: 350px;
+            }
+            span{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="m-3">Js-Task-2</h1>
+        <div class="input-group">
+            <p class="mx-2 fw-bold">Enter String:</p>
+            <input type="text" class="form-control" id="str">
+        </div>
+        <button type="submit" class="m-2 btn btn-primary" onclick="sort()">Sort the string</button>
+        <p class="m-2">The result is: <span id="sol"></span></p>
+        
+
+        <script>
+            function sort(){
+                var a = document.getElementById("str").value;
+                var res = a.split("").sort().join("");
+                document.getElementById("sol").innerHTML = res;
+            }
+        </script>
+    </body>
+</html>
